@@ -15,11 +15,19 @@ end
 
 local servers = {
   'cssls',
+  'emmet_language_server',
   'jsonls',
   'lua_ls',
+  'rust_analyzer',
   'tailwindcss',
+  'tsserver',
   'taplo',
   'volar',
+}
+
+local ignored_servers = {
+  'rust_analyzer',
+  'tsserver',
 }
 
 mason_lspconfig.setup {
@@ -43,6 +51,12 @@ mason_lspconfig.setup_handlers {
     local server_ok, server = pcall(require, 'xbogayo.lspconfig.servers.' .. server_name)
     if server_ok then
       opts = vim.tbl_deep_extend('force', server, opts)
+    end
+
+    for _, iserver in pairs(ignored_servers) do
+      if server_name == iserver then
+        return
+      end
     end
 
     lspconfig[server_name].setup(opts)
