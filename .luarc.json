@@ -1,0 +1,18 @@
+{
+    "workspace.library": [
+        "/home/xbogayo/.local/share/nvim/lazy/neodev.nvim/types/stable",
+        "/usr/share/nvim/runtime/lua",
+        "/home/xbogayo/.local/share/nvim/lazy/LuaSnip/lua",
+        "/home/xbogayo/.local/share/nvim/lazy/nvim-lspconfig/lua",
+        "/home/xbogayo/.local/share/nvim/lazy/catppuccin/lua",
+        "/home/xbogayo/.local/share/nvim/lazy/mason.nvim/lua",
+        "/home/xbogayo/.local/share/nvim/lazy/lazy.nvim/lua",
+        "/home/xbogayo/.local/share/nvim/lazy/neodev.nvim/lua",
+        "/home/xbogayo/.local/share/nvim/lazy/nvim-cmp/lua",
+        "/home/xbogayo/.local/share/nvim/lazy/mason-lspconfig.nvim/lua",
+        "/home/xbogayo/.local/share/nvim/lazy/cmp-nvim-lsp/lua",
+        "/home/xbogayo/.local/share/nvim/lazy/cmp_luasnip/lua",
+        "/home/xbogayo/.config/nvim/lua",
+        "${3rd}/luv/library"
+    ]
+}
