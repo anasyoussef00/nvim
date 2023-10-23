@@ -12,3 +12,5 @@ opt.expandtab = true
 opt.smartindent = true
 
 opt.relativenumber = true
+
+opt.swapfile = false
