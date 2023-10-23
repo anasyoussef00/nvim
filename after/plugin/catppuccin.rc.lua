@@ -10,6 +10,7 @@ catppuccin.setup {
     cmp = true,
     fidget = true,
     mason = true,
+    notify = true,
     telescope = {
       enabled = true,
     },
