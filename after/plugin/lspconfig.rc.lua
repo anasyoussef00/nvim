@@ -14,11 +14,12 @@ if not cmp_nvim_lsp_ok then
 end
 
 local servers = {
-  'lua_ls',
-  'jsonls',
   'cssls',
+  'jsonls',
+  'lua_ls',
   'tailwindcss',
   'taplo',
+  'volar',
 }
 
 mason_lspconfig.setup {

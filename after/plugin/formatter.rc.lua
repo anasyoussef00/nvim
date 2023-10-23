@@ -15,11 +15,11 @@ end
 
 local ensure_installed = {
   'editorconfig_checker',
+  'eslint',
   'eslint_d',
   'jsonlint',
   'prettier',
   'prettierd',
-  'rustfmt',
   'selene',
   'stylua',
   'taplo',
@@ -33,24 +33,65 @@ formatter.setup {
       require('formatter.filetypes.lua').stylua,
     },
     html = {
-      require('formatter.filetypes.html').prettierd,
+      function()
+        if vim.fn.has 'win32' == 1 then
+          return require('formatter.filetypes.html').prettier
+        else
+          return require('formatter.filetypes.html').prettierd
+        end
+      end,
     },
     css = {
-      require('formatter.filetypes.css').prettierd,
+      function()
+        if vim.fn.has 'win32' == 1 then
+          return require('formatter.filetypes.css').prettier
+        else
+          return require('formatter.filetypes.css').prettierd
+        end
+      end,
     },
     javascript = {
       require('formatter.filetypes.javascript').prettierd,
-      require('formatter.filetypes.javascript').eslint_d,
+      function()
+        if vim.fn.has 'win32' == 1 then
+          return {
+            require('formatter.filetypes.javascript').prettier,
+            require('formatter.filetypes.javascript').eslint,
+          }
+        else
+          return {
+            require('formatter.filetypes.javascript').prettierd,
+            require('formatter.filetypes.javascript').eslint_d,
+          }
+        end
+      end,
     },
     json = {
-      require('formatter.filetypes.json').prettierd,
+      function()
+        if vim.fn.has 'win32' == 1 then
+          return require('formatter.filetypes.json').prettier
+        else
+          return require('formatter.filetypes.json').prettierd
+        end
+      end,
     },
     toml = {
       require('formatter.filetypes.toml').taplo,
     },
     typescript = {
-      require('formatter.filetypes.typescript').prettierd,
-      require('formatter.filetypes.typescript').eslint_d,
+      function()
+        if vim.fn.has 'win32' == 1 then
+          return {
+            require('formatter.filetypes.typescript').prettier,
+            require('formatter.filetypes.typescript').eslint,
+          }
+        else
+          return {
+            require('formatter.filetypes.typescript').prettierd,
+            require('formatter.filetypes.typescript').eslint_d,
+          }
+        end
+      end,
     },
     vue = {
       require('formatter.filetypes.vue').prettier,

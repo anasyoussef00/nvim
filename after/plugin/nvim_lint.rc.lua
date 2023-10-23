@@ -7,7 +7,7 @@ lint.linters_by_ft = {
   json = { 'jsonlint' },
   javascript = { 'eslint_d' },
   typescript = { 'eslint_d' },
-  vue = { 'eslint_d' },
+  vue = { 'eslint' },
   lua = { 'selene' },
   editorconfig = { 'editorconfig_checker' },
 }
