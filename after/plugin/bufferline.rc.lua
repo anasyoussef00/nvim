@@ -63,11 +63,11 @@ keymap.set('n', '<A-,>', ':BufferLineCyclePrev<CR>', opts)
 keymap.set('n', '<A-.>', ':BufferLineCycleNext<CR>', opts)
 
 keymap.set('n', '<A-Left>', function()
-  return bufferline.move_to(-1)
+  return bufferline.move_to(1)
 end, opts)
 
 keymap.set('n', '<A-Right>', function()
-  return bufferline.move_to(1)
+  return bufferline.move_to(-1)
 end, opts)
 
 keymap.set('n', '<A-x>', ':bdelete<CR>', opts)
