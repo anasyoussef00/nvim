@@ -15,6 +15,7 @@ end
 
 local servers = {
   'cssls',
+  'eslint',
   'emmet_language_server',
   'jsonls',
   'lua_ls',
